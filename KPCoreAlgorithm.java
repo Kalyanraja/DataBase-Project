@@ -14,6 +14,16 @@ public class KPCoreAlgorithm {
             // Read input from the p_values file
             double[] p = readArrayDouble("p_values.txt");
 
+            // Print the inputs
+            System.out.println("Number of Layers: " + M.size());
+            System.out.println("Array Sizes:");
+            for (int layer = 0; layer < M.size(); layer++) {
+                System.out.println("Layer " + layer + ": " + M.get(layer).length);
+            }
+
+            System.out.println("k Values: " + Arrays.toString(k));
+            System.out.println("p Values: " + Arrays.toString(p));
+
             // Initialize the vertex set Ql
             Set<Integer> Ql = new HashSet<>();
             for (int vertex = 0; vertex < M.get(M.size() - 1).length; vertex++) {
