@@ -26,11 +26,8 @@ public class KPPTreeAlgorithm {
             return layers.length;
         }
 
-        
-
         public int getLayerDegree(int layer) {
-            
-            return 0; 
+            return 0;
         }
     }
 
@@ -63,7 +60,6 @@ public class KPPTreeAlgorithm {
                 root = newNode;
             }
         }
-
     }
 
     static class PTree {
@@ -160,6 +156,7 @@ public class KPPTreeAlgorithm {
                 throw new InputMismatchException("Invalid format in the input file.");
             }
             int numLayers = scanner.nextInt();
+            System.out.println("Number of Layers: " + numLayers); // Print the number of layers
             Graph graph = new Graph(numLayers);
 
             // Read edges for each layer
@@ -168,6 +165,8 @@ public class KPPTreeAlgorithm {
                     throw new InputMismatchException("Invalid format in the input file.");
                 }
                 int numEdges = scanner.nextInt();
+                System.out.println("Layer " + (i + 1) + " - Number of Edges: " + numEdges); // Print the number of edges
+
                 int[][] edges = new int[numEdges][2];
 
                 for (int j = 0; j < numEdges; j++) {
@@ -187,9 +186,11 @@ public class KPPTreeAlgorithm {
             scanner.close();
 
             // Perform GCD+ Algorithm
+            System.out.println("\nRunning GCD+ Algorithm...\n");
             Set<int[]> result = GCDPlus(graph);
 
             // Display the result
+            System.out.println("\nResult:");
             for (int[] core : result) {
                 System.out.println("Core: " + Arrays.toString(core));
             }
